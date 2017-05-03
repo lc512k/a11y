@@ -37,11 +37,15 @@ The quick solution is to add some text to the `alt` attribute. While it will mak
 
 When images don't add anything to the context and their only role is decoration the recommendation is to use a "null alt" or `alt=""`. This will pass `pa11y` and compiles with WCAG2.0. However, some screen readers like VoiceOver may still pick up the image and read out `image` to the user. To avoid this we add `role="presentation"` for the image to be ignored altogether.
 
-<img alt="" role="presentation" src="https://cloud.githubusercontent.com/assets/3425322/25666914/cdd6ce28-3019-11e7-9293-82a439910ad8.png" width="250px">
+<img alt="" role="presentation" src="https://cloud.githubusercontent.com/assets/3425322/25666914/cdd6ce28-3019-11e7-9293-82a439910ad8.png" width="300px">
 
 ### Simple images with information
 
-When the image does convey information easily described in one line, we use the `alt` attribute, i.e. `Trump leads poll by 5%`
+When the image does convey information easily described in one line, we use the `alt` attribute, i.e.
+```html
+<img src="..." alt="Hilary 57%, Trump 34%, Would not vote 9%">
+```
+<img alt ="Hilary 57%, Trump 34%, Would not vote 9%" src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAS9AAAAJDFmYTU5ZDQ4LWRlZDAtNDJjYi1hNDA0LTIwYmQ5NzZhZTBiZg.jpg">
 
 ### Complex Infographics and charts 🏗
 
