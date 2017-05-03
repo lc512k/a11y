@@ -51,9 +51,9 @@ When the image does convey information easily described in one line, we use the 
 
 We are actively working on a solution for our more complex images like infographics. One recommendation is to use attribute `longdesc` but support for it is poor and is currently deprecated, so we will not be going down this route. Cramming a long description inside the `alt`? Not ideal (maybe?). The solution that seems most appealing is to add a long description either visually hidden or in a visibly linked, separate document (better).
 
-<img src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F74c40692-fe97-11e6-96f8-3700c5664d30?source=next&fit=scale-down&width=600">
+Watch this space for updates...
 
-Stay tuned for updates...
+<img src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F74c40692-fe97-11e6-96f8-3700c5664d30?source=next&fit=scale-down&width=300">
 
 ## Duplicate links
 read more
