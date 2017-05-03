@@ -15,7 +15,7 @@ More specifically, it's telling you that the colour contrast ratio between that 
 
 We often get the above error for items that are visually hidden (due to accessibility or otherwise). If an item is hidden or set off-screen with a css class, `pa11y` usually can't tell, and will fail if contrast doesn't pass.
 
-One option would be to tell `pa11y` (via config) to ignore all elements with a certain class: if `visually-hidden` don't even check it. The problem for us in this case is that most visually hidden elements contain elements we want to make available to screen readers, like additional explanatory text, such as:
+One option would be to tell `pa11y` (via [config](https://github.com/pa11y/pa11y#hideelements-string)) to ignore all elements with a certain class: if `visually-hidden` don't even check it. The problem for us in this case is that most visually hidden elements contain elements we want to make available to screen readers, like additional explanatory text, such as:
 
 ```html
 <a href="foo.html" target="_blank">Foo<span class="visually-hidden"> opens in a new window</span></a>
@@ -26,11 +26,16 @@ While this is a simple example, in more complex cases we really want to make sur
 Ultimately, we just make sure all color contrast passes, whether visible or not. This also ensures that if, for whatever reason, that `visually-hidden` class is eventually removed from that element it will continue to pass `pa11y` and not break our builds.
 
 ## When to "alt" an image?
+
+`• Error: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.`
+
 The `alt` attribute. Literally there as an alternative to the image when, for whatever reason, it cannot be seen (i.e. the link is broken, the network is slow, you're a screen reader user, etc.)
 
-
+The quick solution is to add some text to the `alt` attribute. While it will make `pa11y` pass (because `pa11y` can't know the purpose of the image, or how it fits in your context) it's not always the right solution.
 
 ### Decorative Images
+
+[decorative](https://cloud.githubusercontent.com/assets/3425322/25666914/cdd6ce28-3019-11e7-9293-82a439910ad8.png width="400")
 
 ### Simple images with information
 
