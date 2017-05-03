@@ -18,7 +18,7 @@ We often get the above error for items that are visually hidden (due to accessib
 One option would be to tell `pa11y` (via config) to ignore all elements with a certain class: if `visually-hidden` don't even check it. The problem for us in this case is that most visually hidden elements contain elements we want to make available to screen readers, like additional explanatory text, such as:
 
 ```html
-<a href="somewhere.html" target="_blank">some link<span class="visually-hidden">(opens in a new window)</span></a>
+<a href="thing.html" target="_blank">a link<span class="visually-hidden">(opens in a new window)</span></a>
 ```
 
 While this is a simple example, in more complex cases we really want to make sure `pa11y` is running on the hidden content, which is specifically being served to assistive tech users, so ignoring the `visually-hidden` class altogether was not an option for us.
