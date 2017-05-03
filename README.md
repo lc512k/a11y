@@ -45,11 +45,13 @@ When the image does convey information easily described in one line, we use the 
 ```html
 <img src="..." alt="Hilary 57%, Trump 34%, Would not vote 9%">
 ```
-<img alt ="Hilary 57%, Trump 34%, Would not vote 9%" src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAS9AAAAJDFmYTU5ZDQ4LWRlZDAtNDJjYi1hNDA0LTIwYmQ5NzZhZTBiZg.jpg" width="200">
+<img alt ="Hilary 57%, Trump 34%, Would not vote 9%" src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAS9AAAAJDFmYTU5ZDQ4LWRlZDAtNDJjYi1hNDA0LTIwYmQ5NzZhZTBiZg.jpg" width="300">
 
 ### Complex Infographics and charts 🏗
 
 We are actively working on a solution for our more complex images like infographics. One recommendation is to use attribute `longdesc` but support for it is poor and is currently deprecated, so we will not be going down this route. Cramming a long description inside the `alt`? Not ideal (maybe?). The solution that seems most appealing is to add a long description either visually hidden or in a visibly linked, separate document (better).
+
+<img src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F74c40692-fe97-11e6-96f8-3700c5664d30?source=next&fit=scale-down&width=600">
 
 Stay tuned for updates...
 
