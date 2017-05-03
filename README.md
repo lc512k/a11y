@@ -15,7 +15,13 @@ More specifically, it's telling you that the colour contrast ratio between that 
 
 We often get the above error for items that are visually hidden (due to accessibility or otherwise). If an item is hidden or set off-screen with a css class, `pa11y` usually can't tell, and will fail if contrast doesn't pass.
 
-One option would be to tell `pa11y` (via config) to ignore all elements with a certain class: if `visually-hidden` don't even check it. The problem for us in this case is that most visually hidden elements contain elements we want to make available to screen readers, like additional explanatory text, such as: `<a href="somewhere.html" target="_blank">some link<span class="visually-hidden">(opens in a new window)</span></a>`. While this is a simple example, in more complex cases we really want to make sure `pa11y` is running on the hidden content, which is specifically being served to assistive tech users, so ignoring the `visually-hidden` class altogether was not an option for us.
+One option would be to tell `pa11y` (via config) to ignore all elements with a certain class: if `visually-hidden` don't even check it. The problem for us in this case is that most visually hidden elements contain elements we want to make available to screen readers, like additional explanatory text, such as:
+
+```html
+<a href="somewhere.html" target="_blank">some link<span class="visually-hidden">(opens in a new window)</span></a>
+```
+
+While this is a simple example, in more complex cases we really want to make sure `pa11y` is running on the hidden content, which is specifically being served to assistive tech users, so ignoring the `visually-hidden` class altogether was not an option for us.
 
 Ultimately, we just make sure all color contrast passes, whether visible or not. This also ensures that if, for whatever reason, that `visually-hidden` class is eventually removed from that element it will continue to pass `pa11y` and not break our builds.
 
