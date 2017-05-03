@@ -35,7 +35,7 @@ The quick solution is to add some text to the `alt` attribute. While it will mak
 
 ### Decorative Images
 
-[decorative](https://cloud.githubusercontent.com/assets/3425322/25666914/cdd6ce28-3019-11e7-9293-82a439910ad8.png)
+![decorative](https://cloud.githubusercontent.com/assets/3425322/25666914/cdd6ce28-3019-11e7-9293-82a439910ad8.png)
 
 ### Simple images with information
 
