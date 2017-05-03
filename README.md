@@ -11,11 +11,13 @@ By far the most popular [pa11y-ci](https://github.com/pa11y/ci) error we had whe
 
 More specifically, it's telling you that the colour contrast ratio between that text and the background under it falls below a ratio of 4.5:1 (for WCAG2.0AA). It will also recommend a colour with good enough contrast you can use. If that's not suitable, you can choose your own colour and check it with the [WebAIM Contrast Checker](webaim.org/resources/contrastchecker/)
 
-This is an example of the color pa11y complained about (`bad-contrast`) and the color it recommended instead (`good-contrast`). Nearly identical, right?
-
-![bad vs good contrast](https://cloud.githubusercontent.com/assets/3425322/25665813/99989bd0-3016-11e7-921e-37d32146698b.png)
-
 ### What if the item is visually hidden?
+
+We often get the above error for items that are visually hidden (due to accessibility or otherwise). If an item is hidden or set off-screen with a css class, `pa11y` usually can't tell, and will fail if contrast doesn't pass.
+
+One option would be to tell `pa11y` (via config) to ignore all elements with a certain class: if `visually-hidden` don't even check it. The problem for us in this case is that most visually hidden elements contain elements we want to make available to screen readers, like additional explanatory text, such as: `<a href="somewhere.html" target="_blank">some link<span class="visually-hidden">(opens in a new window)</span></a>`. While this is a simple example, in more complex cases we really want to make sure `pa11y` is running on the hidden content, which is specifically being served to assistive tech users, so ignoring the `visually-hidden` class altogether was not an option for us.
+
+Ultimately, we just make sure all color contrast passes, whether visible or not. This also ensures that if, for whatever reason, that `visually-hidden` class is eventually removed from that element it will continue to pass `pa11y` and not break our builds.
 
 ## When to "alt" an image?
 The `alt` attribute. Literally there as an alternative to the image when, for whatever reason, it cannot be seen (i.e. the link is broken, the network is slow, you're a screen reader user, etc.)
