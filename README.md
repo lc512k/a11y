@@ -45,7 +45,7 @@ When the image does convey information easily described in one line, we use the 
 ```html
 <img src="..." alt="Hilary 57%, Trump 34%, Would not vote 9%">
 ```
-<img alt ="Hilary 57%, Trump 34%, Would not vote 9%" src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAS9AAAAJDFmYTU5ZDQ4LWRlZDAtNDJjYi1hNDA0LTIwYmQ5NzZhZTBiZg.jpg">
+<img alt ="Hilary 57%, Trump 34%, Would not vote 9%" src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAS9AAAAJDFmYTU5ZDQ4LWRlZDAtNDJjYi1hNDA0LTIwYmQ5NzZhZTBiZg.jpg" width="200">
 
 ### Complex Infographics and charts 🏗
 
